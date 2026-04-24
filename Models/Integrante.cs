@@ -19,6 +19,11 @@ public class Integrante
         this.intereses = intereses;
     }
 
+    public override string ToString()
+    {
+        return base.ToString();
+    }
+
     public int GetDni()
     {
         return this.DNI;
@@ -32,5 +37,15 @@ public class Integrante
     public string GetFoto()
     {
         return this.foto;
+    }
+
+    public List<string> GetFamiliares()
+    {
+        return this.familiares;
+    }
+
+    public List<string> GetIntereses()
+    {
+        return this.intereses;
     }
 }

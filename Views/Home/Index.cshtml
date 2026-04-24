@@ -4,10 +4,11 @@
 }
 
 <h1>Los rastafa</h1>
-<img src="Logo grupo.png" alt="Logo grupo"/>
+<img src="LogoGrupo.png" alt="Logo grupo"/>
 @foreach(KeyValuePair<int, Integrante> kvp in (Dictionary<int, Integrante>)ViewBag.Grupo)
 {
     Integrante i = kvp.Value;
     <img src= "@i.GetFoto()" alt="@i.GetNombre()"/>
-    @Html.ActionLink(linkText: $"{i.GetNombre()}", actionName: "SelectIntegrante", controllerName: "Home")
+    var dni = i.GetDni();
+    @Html.ActionLink(linkText: $"{i.GetNombre()}", actionName: "SelectIntegrante", controllerName: "Home", routeValues: new {dni = dni})
 }

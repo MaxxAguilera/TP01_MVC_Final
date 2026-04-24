@@ -3,5 +3,15 @@
 }
 
 <h1>@ViewBag.Integrante.GetNombre()</h1>
-<p>DNI: @ViewBag.DNI</p>
+<p>DNI: @ViewBag.Integrante.GetDni()</p>
+<p>Familiares:</p>
+@foreach(string familiar in (List<string>)ViewBag.Integrante.GetFamiliares())
+{
+    <p>@familiar</p>
+}
+<p>Intereses:</p>
+@foreach(string interes in (List<string>)ViewBag.Integrante.GetIntereses())
+{
+    <p>@interes</p>
+}
 <img src="@ViewBag.Integrante.GetFoto()" />
