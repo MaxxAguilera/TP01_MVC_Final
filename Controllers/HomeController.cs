@@ -33,7 +33,8 @@ public class HomeController : Controller
 
     public IActionResult SelectIntegrante(int dni){
         Grupo grupo = new Grupo();
-        ViewBag.Integrante = grupo.GetIntegrante(dni);
-        return View();
+        Integrante integrante = grupo.GetIntegrante(dni);
+        ViewBag.Integrante = integrante;
+        return View("InfoIntegrante");
     }
 }
